@@ -333,17 +333,20 @@ def analyze_orders(raw_orders, profile=None, generated_at=None):
     big_orders = sum(1 for o in orders if o["paid_cents"] >= 5000)
     wangbao_count = sum(q for name, q in item_qty.items() if "巨无霸" in name)
 
+    # 阈值调优：让标签更易命中且互相区分，共 12 条确定性规则
     rules = [
-        ("早餐信徒", sp.get("早餐", 0) >= 30, sp.get("早餐", 0)),
-        ("夜宵麦门", sp.get("深夜", 0) >= 12, sp.get("深夜", 0)),
-        ("宅家麦乐送", cpp.get("麦乐送", 0) >= 35, cpp.get("麦乐送", 0)),
-        ("现制派", cpp.get("到店堂食", 0) >= 30, cpp.get("到店堂食", 0)),
-        ("得来速党", cpp.get("得来速", 0) >= 12, cpp.get("得来速", 0)),
-        ("巨无霸死忠", wangbao_count >= 10, wangbao_count),
-        ("甜品控", bp.get("甜品", 0) >= 12, bp.get("甜品", 0)),
-        ("薅羊毛大师", coupon["usage_rate"] >= 30, coupon["usage_rate"]),
-        ("周末战士", _pct(weekend_orders, n) >= 42, _pct(weekend_orders, n)),
-        ("大额玩家", _pct(big_orders, n) >= 15, _pct(big_orders, n)),
+        ("早餐信徒", sp.get("早餐", 0) >= 28, sp.get("早餐", 0)),
+        ("夜宵麦门", sp.get("深夜", 0) >= 10, sp.get("深夜", 0)),
+        ("宅家麦乐送", cpp.get("麦乐送", 0) >= 32, cpp.get("麦乐送", 0)),
+        ("现制派", cpp.get("到店堂食", 0) >= 28, cpp.get("到店堂食", 0)),
+        ("得来速党", cpp.get("得来速", 0) >= 10, cpp.get("得来速", 0)),
+        ("巨无霸死忠", wangbao_count >= 8, wangbao_count),
+        ("甜品控", bp.get("甜品", 0) >= 10, bp.get("甜品", 0)),
+        ("咖啡党", bp.get("饮品", 0) >= 22, bp.get("饮品", 0)),
+        ("薅羊毛大师", coupon["usage_rate"] >= 25, coupon["usage_rate"]),
+        ("周末战士", _pct(weekend_orders, n) >= 40, _pct(weekend_orders, n)),
+        ("大额玩家", _pct(big_orders, n) >= 12, _pct(big_orders, n)),
+        ("高频麦门", totals["avg_per_week"] >= 1.5, totals["avg_per_week"]),
     ]
     traits = [(name, score) for name, hit, score in rules if hit]
     traits.sort(key=lambda x: -x[1])

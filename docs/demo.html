@@ -7,165 +7,201 @@
 <meta name="description" content="麦麦年报：用你的麦当劳真实订单生成一份年度复盘报告，含消费画像、最爱餐品、高光时刻与人格标签。基于麦当劳 MCP 数据。">
 <style>
 :root{
-  --red:#DA291C; --yel:#FFC72C; --ink:#141414; --card:#1C1C1E; --card2:#26262A;
-  --line:rgba(255,255,255,.08); --dim:#9A9AA0; --txt:#FFFFFF;
-  --green:#4ADE80; --blue:#60A5FA; --purple:#C084FC;
+  --mcred:#DA291C; --mcred-dark:#A31E14; --mcred-deep:#7A1610;
+  --mcgold:#FFC72C; --mcgold-deep:#E0A800; --mcgold-soft:#FFF5D6;
+  --ink:#1A1A1A; --ink-soft:#3A3A3A; --ink-mid:#6B6B6B; --ink-dim:#9A9A9A;
+  --paper:#FFFFFF; --paper-warm:#FFFDF7; --paper-cool:#F7F5F0;
+  --line:#EEEAE0; --line-soft:#F3EFE6;
+  --shadow:0 6px 24px rgba(218,41,28,.06), 0 2px 6px rgba(0,0,0,.04);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
-  font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  background:#0A0A0A;color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased;
-  padding:22px 0 40px;
+  font-family:"McDonaldland","Segoe UI",system-ui,-apple-system,"PingFang SC",
+    "Microsoft YaHei",sans-serif;
+  background:var(--paper-warm);color:var(--ink);line-height:1.55;
+  -webkit-font-smoothing:antialiased;padding:22px 0 40px;
 }
 .wrap{max-width:460px;margin:0 auto;padding:0 14px;display:flex;flex-direction:column;gap:14px}
-a{color:var(--yel);text-decoration:none}
+a{color:var(--mcred);text-decoration:none;font-weight:700}
 a:hover{text-decoration:underline}
 
 /* ---------- 卡片 ---------- */
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;
-  padding:24px 22px;position:relative;overflow:hidden}
-.card.warm{background:linear-gradient(160deg,#3A1A12,#1C1C1E 58%)}
-.card.gold{background:linear-gradient(160deg,#3A3011,#1C1C1E 60%)}
-.card.fire{background:linear-gradient(165deg,var(--red),#7A1610 62%,#1C1C1E 100%)}
-.kick{font-size:11.5px;letter-spacing:2px;color:var(--yel);font-weight:800;margin-bottom:12px}
-.kick.dim{color:var(--dim)}
-.tit{font-size:15.5px;font-weight:800;line-height:1.4}
-.sub{font-size:12.5px;color:var(--dim);margin-top:7px;line-height:1.7}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  padding:24px 22px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.card.tinted-red{background:linear-gradient(165deg,#FFE9E7 0%,#FFFFFF 55%)}
+.card.tinted-gold{background:linear-gradient(165deg,#FFF5D6 0%,#FFFFFF 55%)}
+.card.fire{background:linear-gradient(160deg,var(--mcred) 0%,#B71F14 60%,var(--mcred-deep) 100%);
+  color:#FFF;border-color:transparent}
+.kick{font-size:11.5px;letter-spacing:2.5px;color:var(--mcred);font-weight:800;
+  margin-bottom:12px;text-transform:uppercase}
+.kick.dim{color:var(--ink-mid)}
+.tit{font-size:16px;font-weight:800;line-height:1.4;color:var(--ink)}
+.sub{font-size:12.5px;color:var(--ink-mid);margin-top:8px;line-height:1.7}
 
-/* ---------- 封面 ---------- */
-.hero{background:linear-gradient(170deg,#DA291C 0%,#8E140D 55%,#1C1C1E 100%);
-  border:1px solid var(--line);padding:30px 24px 26px;text-align:center}
-.hero .lg{font-size:13px;letter-spacing:5px;color:#FFD9A0;font-weight:800}
-.hero h1{font-size:40px;font-weight:900;letter-spacing:1px;margin:10px 0 4px;line-height:1.1}
-.hero .yr{color:var(--yel)}
-.hero .tag{font-size:13px;color:#FFD9A0;margin-top:10px}
-.hero .rg{margin-top:16px;display:flex;justify-content:space-around;gap:8px;
-  border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
+/* ---------- 封面：红底金字 + 金色拱门 ---------- */
+.hero{background:linear-gradient(170deg,#DA291C 0%,#B71F14 60%,#7A1610 100%);
+  border:1px solid transparent;padding:34px 24px 28px;text-align:center;color:#FFF;
+  box-shadow:0 12px 40px rgba(218,41,28,.32);border-radius:20px;
+  position:relative;overflow:hidden}
+.hero .arcs{position:absolute;top:-38px;right:-38px;width:170px;height:170px;opacity:.14}
+.hero .lg{font-size:12px;letter-spacing:6px;color:var(--mcgold);font-weight:800;
+  position:relative;z-index:1}
+.hero h1{font-size:44px;font-weight:900;letter-spacing:1px;margin:12px 0 4px;line-height:1.1;
+  position:relative;z-index:1;text-shadow:0 2px 8px rgba(0,0,0,.18)}
+.hero .yr{color:var(--mcgold)}
+.hero .tag{font-size:13.5px;color:#FFD9A0;margin-top:12px;position:relative;z-index:1}
+.hero .tag b{color:var(--mcgold);font-weight:800}
+.hero .rg{margin-top:20px;display:flex;justify-content:space-around;gap:8px;
+  border-top:1px solid rgba(255,255,255,.22);padding-top:16px;position:relative;z-index:1}
 .hero .rg div{font-size:11.5px;color:#FFD9A0}
-.hero .rg b{display:block;font-size:17px;color:#fff;font-weight:800;font-variant-numeric:tabular-nums}
+.hero .rg b{display:block;font-size:17px;color:#fff;font-weight:800;
+  font-variant-numeric:tabular-nums}
 
 /* ---------- Hero 数字 ---------- */
 .hero-num{text-align:center}
-.hero-num .v{font-size:62px;font-weight:900;color:var(--yel);letter-spacing:-2px;line-height:1;
+.hero-num .v{font-size:64px;font-weight:900;color:var(--mcred);letter-spacing:-2px;line-height:1;
   font-variant-numeric:tabular-nums}
-.hero-num .v small{font-size:24px;font-weight:800;margin-right:2px}
-.hero-num .l{font-size:12.5px;color:var(--dim);margin-top:9px;letter-spacing:1px}
-.triplet{display:flex;justify-content:space-between;gap:8px;margin-top:18px;
-  border-top:1px solid var(--line);padding-top:16px}
+.hero-num .v small{font-size:26px;font-weight:800;margin-right:2px;color:var(--mcgold-deep)}
+.hero-num .l{font-size:13px;color:var(--ink-mid);margin-top:10px;letter-spacing:.5px}
+.triplet{display:flex;justify-content:space-between;gap:8px;margin-top:20px;
+  border-top:1px dashed var(--line);padding-top:18px}
 .triplet>div{text-align:center;flex:1}
-.triplet .n{font-size:23px;font-weight:800;color:var(--txt);font-variant-numeric:tabular-nums}
-.triplet .k{font-size:11px;color:var(--dim);margin-top:3px}
+.triplet .n{font-size:24px;font-weight:900;color:var(--mcred);font-variant-numeric:tabular-nums}
+.triplet .k{font-size:11px;color:var(--ink-mid);margin-top:4px}
 
 /* ---------- 人格标签 ---------- */
 .persona{text-align:center}
-.persona .lb{font-size:11.5px;color:var(--dim);letter-spacing:3px;font-weight:700;margin-bottom:8px}
-.persona .lg{display:inline-block;background:var(--yel);color:#1A1A1A;font-size:38px;
-  font-weight:900;letter-spacing:2px;padding:14px 30px;border-radius:18px;line-height:1.1;
-  box-shadow:0 10px 34px rgba(255,199,44,.24)}
-.traits{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:18px}
-.tr{background:var(--card2);border:1px solid var(--line);border-radius:999px;
-  padding:6px 12px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px}
-.tr i{font-style:normal;font-size:11px;color:var(--yel);font-variant-numeric:tabular-nums}
-.hint{font-size:11.5px;color:var(--dim);text-align:center;margin-top:14px;line-height:1.7}
+.persona .lb{font-size:11.5px;color:var(--ink-mid);letter-spacing:3px;font-weight:700;margin-bottom:10px}
+.persona .lg{display:inline-block;background:linear-gradient(135deg,var(--mcgold),#F5B800);
+  color:#1A1A1A;font-size:36px;font-weight:900;letter-spacing:2px;padding:16px 32px;
+  border-radius:18px;line-height:1.1;box-shadow:0 10px 34px rgba(255,199,44,.36);
+  border:3px solid #FFF;outline:2px solid var(--mcgold-deep);outline-offset:-6px}
+.traits{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:20px}
+.tr{background:#FFF;border:1.5px solid var(--mcgold);border-radius:999px;
+  padding:7px 13px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px;
+  color:var(--ink-soft)}
+.tr i{font-style:normal;font-size:11px;color:var(--mcred);font-variant-numeric:tabular-nums;font-weight:800}
+.hint{font-size:11.5px;color:var(--ink-mid);text-align:center;margin-top:16px;line-height:1.7}
 
 /* ---------- 条形 ---------- */
-.rows{display:flex;flex-direction:column;gap:11px;margin-top:6px}
+.rows{display:flex;flex-direction:column;gap:12px;margin-top:8px}
 .row{display:flex;align-items:center;gap:10px}
-.row .nm{width:74px;flex:0 0 74px;font-size:12.5px;font-weight:700;text-align:right;color:#E6E6EA}
-.row .bar{flex:1;height:22px;background:var(--card2);border-radius:7px;overflow:hidden}
-.row .bar-f{height:100%;border-radius:7px;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-.row .vv{width:66px;flex:0 0 66px;font-size:12px;color:var(--dim);
+.row .nm{width:74px;flex:0 0 74px;font-size:12.5px;font-weight:700;text-align:right;color:var(--ink-soft)}
+.row .bar{flex:1;height:24px;background:var(--line-soft);border-radius:8px;overflow:hidden}
+.row .bar-f{height:100%;border-radius:8px;animation:grow 1s cubic-bezier(.2,.8,.2,1) both;
+  background:linear-gradient(90deg,var(--mcgold),#F5B800)}
+.row .vv{width:70px;flex:0 0 70px;font-size:12px;color:var(--ink-mid);
   font-variant-numeric:tabular-nums}
 @keyframes grow{from{width:0}}
-.row.win .nm{color:var(--yel)}
+.row.win .nm{color:var(--mcred);font-weight:800}
+.row.win .bar-f{background:linear-gradient(90deg,var(--mcred),#B71F14)}
 
 /* ---------- 柱状 ---------- */
 .chart{display:flex;align-items:flex-end;gap:4px;justify-content:space-between;
-  height:150px;padding:8px 2px 0}
+  height:150px;padding:10px 2px 0}
 .col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
-.col-f{background:linear-gradient(180deg,var(--yel),#C99312);border-radius:5px 5px 2px 2px;
+.col-f{background:linear-gradient(180deg,var(--mcgold),#E0A800);border-radius:6px 6px 2px 2px;
   position:relative;min-height:6px;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
-.col-f span{position:absolute;left:0;right:0;top:-15px;text-align:center;font-size:10px;
-  color:var(--dim);font-variant-numeric:tabular-nums}
-.col-l{text-align:center;font-size:10px;color:var(--dim);margin-top:5px}
-.col.peak .col-f{background:linear-gradient(180deg,var(--red),#8E140D)}
-.col.peak .col-l{color:var(--red);font-weight:800}
+.col-f span{position:absolute;left:0;right:0;top:-16px;text-align:center;font-size:10px;
+  color:var(--ink-mid);font-variant-numeric:tabular-nums;font-weight:700}
+.col-l{text-align:center;font-size:10px;color:var(--ink-mid);margin-top:6px}
+.col.peak .col-f{background:linear-gradient(180deg,var(--mcred),#B71F14)}
+.col.peak .col-l{color:var(--mcred);font-weight:800}
 @keyframes rise{from{height:0}}
 
-/* ---------- 高光卡 ---------- */
-.hl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.hl .it{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
-.hl .k{font-size:11px;color:var(--yel);font-weight:800;letter-spacing:1px}
-.hl .v{font-size:20px;font-weight:800;margin-top:5px;font-variant-numeric:tabular-nums;line-height:1.2}
-.hl .d{font-size:11.5px;color:var(--dim);margin-top:5px;line-height:1.55}
+/* ---------- 高光卡（红底，白字）---------- */
+.hl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.hl .it{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:14px;padding:14px 15px;backdrop-filter:blur(4px)}
+.hl .k{font-size:11px;color:var(--mcgold);font-weight:800;letter-spacing:1px}
+.hl .v{font-size:22px;font-weight:900;margin-top:6px;font-variant-numeric:tabular-nums;line-height:1.2;color:#FFF}
+.hl .d{font-size:11.5px;color:#FFD9A0;margin-top:6px;line-height:1.55}
 
 /* ---------- 列表 ---------- */
-.list{display:flex;flex-direction:column;gap:9px;margin-top:6px}
-.li{display:flex;align-items:baseline;gap:11px;background:var(--card2);
-  border:1px solid var(--line);border-radius:12px;padding:11px 13px}
-.li .rk{font-size:15px;font-weight:900;color:var(--yel);width:22px;flex:0 0 22px;
+.list{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+.li{display:flex;align-items:baseline;gap:12px;background:var(--paper-warm);
+  border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.li .rk{font-size:16px;font-weight:900;color:var(--mcred);width:24px;flex:0 0 24px;
   font-variant-numeric:tabular-nums}
-.li .nm{flex:1;font-size:13px;font-weight:700;min-width:0}
-.li .vl{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;flex:0 0 auto}
+.li .nm{flex:1;font-size:13px;font-weight:700;min-width:0;color:var(--ink)}
+.li .vl{font-size:12.5px;color:var(--ink-mid);font-variant-numeric:tabular-nums;flex:0 0 auto;font-weight:600}
 
 /* ---------- 数字网格 ---------- */
-.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
-.gc{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
-.gc .n{font-size:25px;font-weight:800;color:var(--yel);font-variant-numeric:tabular-nums;
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.gc{background:var(--paper-warm);border:1px solid var(--line);border-radius:14px;padding:14px 15px}
+.gc .n{font-size:26px;font-weight:900;color:var(--mcred);font-variant-numeric:tabular-nums;
   line-height:1.1}
-.gc .k{font-size:11.5px;color:var(--dim);margin-top:4px;line-height:1.5}
+.gc .k{font-size:11.5px;color:var(--ink-mid);margin-top:5px;line-height:1.5}
 
 /* ---------- 时段环 ---------- */
-.slots{display:flex;flex-direction:column;gap:9px;margin-top:6px}
+.slots{display:flex;flex-direction:column;gap:10px;margin-top:8px}
 .sl{display:flex;align-items:center;gap:10px}
-.sl .hd{width:88px;flex:0 0 88px}
-.sl .hd b{font-size:12.5px;font-weight:700;display:block}
-.sl .hd span{font-size:10px;color:var(--dim)}
-.sl .bar{flex:1;height:16px;background:var(--card2);border-radius:5px;overflow:hidden}
-.sl .bar-f{height:100%;border-radius:5px;background:var(--yel);
-  animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-.sl .vv{width:52px;flex:0 0 52px;text-align:right;font-size:12px;font-weight:700;
-  font-variant-numeric:tabular-nums}
+.sl .hd{width:92px;flex:0 0 92px}
+.sl .hd b{font-size:12.5px;font-weight:700;display:block;color:var(--ink)}
+.sl .hd span{font-size:10px;color:var(--ink-dim)}
+.sl .bar{flex:1;height:18px;background:var(--line-soft);border-radius:6px;overflow:hidden}
+.sl .bar-f{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--mcgold),#F5B800);
+  animation:grow 1s cubic-bezier(.2,.8,.2,1) both}
+.sl .vv{width:54px;flex:0 0 54px;text-align:right;font-size:12px;font-weight:800;
+  font-variant-numeric:tabular-nums;color:var(--ink-soft)}
 
-/* ---------- 尾页 ---------- */
-.cta{background:linear-gradient(160deg,#FFC72C,#E0A800);color:#1A1A1A;text-align:center;
-  padding:26px 22px;border-radius:22px;border:1px solid var(--line)}
-.cta h3{font-size:19px;font-weight:900;letter-spacing:.5px}
-.cta p{font-size:12.5px;margin-top:8px;line-height:1.7;color:#4A3A08}
-.foot{font-size:11px;color:#5A5A5E;text-align:center;line-height:1.9;padding:0 14px}
-.foot code{background:#1A1A1A;color:#B8B8BE;padding:1px 6px;border-radius:5px}
-.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:999px;
-  background:var(--yel);color:#1A1A1A;vertical-align:middle;margin-left:6px}
+/* ---------- 薯条条纹分隔 ---------- */
+.fry-divider{display:flex;gap:3px;justify-content:center;margin:8px 0 4px;opacity:.85}
+.fry-divider i{width:5px;height:24px;background:var(--mcgold);border-radius:2px;
+  box-shadow:inset 0 -4px 0 var(--mcgold-deep)}
+
+/* ---------- 尾页 CTA（红底）---------- */
+.cta{background:linear-gradient(160deg,#DA291C 0%,#B71F14 100%);color:#FFF;text-align:center;
+  padding:28px 22px;border-radius:20px;box-shadow:0 12px 36px rgba(218,41,28,.28);
+  border:1px solid transparent;position:relative;overflow:hidden}
+.cta .arcs2{position:absolute;bottom:-46px;left:-32px;width:150px;height:150px;opacity:.16}
+.cta h3{font-size:20px;font-weight:900;letter-spacing:.5px;position:relative;z-index:1}
+.cta p{font-size:13px;margin-top:10px;line-height:1.75;color:#FFE9B8;position:relative;z-index:1}
+.cta a{color:var(--mcgold);font-weight:800}
+.cta .gold-btn{display:inline-block;margin-top:14px;background:var(--mcgold);color:#1A1A1A;
+  font-weight:900;font-size:14px;padding:11px 22px;border-radius:999px;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);position:relative;z-index:1}
+.foot{font-size:11px;color:var(--ink-dim);text-align:center;line-height:1.9;padding:0 14px}
+.foot b{color:var(--ink-mid);font-weight:700}
+.foot code{background:#EEEAE0;color:var(--ink-soft);padding:2px 7px;border-radius:5px;font-weight:600}
+.badge{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:999px;
+  background:var(--mcgold);color:#1A1A1A;vertical-align:middle;margin-left:6px}
 @media (prefers-reduced-motion:reduce){.bar-f,.col-f{animation:none}}
 </style>
 </head>
 <body>
 <main class="wrap">
 <section class="hero">
+<svg class="arcs" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" width="170" height="170" fill="none" aria-hidden="true"><path d="M6 76 C 6 14, 42 14, 50 76" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/><path d="M50 76 C 58 14, 94 14, 94 76" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/></svg>
 <div class="lg">M C D &nbsp; W R A P P E D</div>
 <h1>麦麦年报 <span class="yr">2026</span></h1>
 <div class="tag">这一年，你和麦当劳的第 <b>82</b> 次相遇</div>
 <div class="rg"><div>统计周期<b>01-05 ~ 10-11</b></div><div>覆盖门店<b>5</b></div><div>常吃时段<b>早餐</b></div></div>
 </section>
-<section class="card warm hero-num">
+<section class="card tinted-red hero-num">
 <div class="kick">2026 总览</div>
 <div class="v"><small>¥</small>2650</div>
 <div class="l">279 天里，你一共为麦当劳花了这么多</div>
+<div class="fry-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <div class="triplet"><div><div class="n">82</div><div class="k">笔订单</div></div><div><div class="n">219</div><div class="k">件餐品</div></div><div><div class="n">¥32.3</div><div class="k">笔均实付</div></div></div>
 <div class="sub">2026-01-05 起，每周平均 <b>2.06</b> 单；最常去 深圳罗湖莲塘村店。</div>
 </section>
-<section class="card gold persona">
+<section class="card tinted-gold persona">
 <div class="lb">你的麦麦人格</div>
 <div class="lg">宅家麦乐送</div>
 <div class="traits">
 <span class="tr">宅家麦乐送<i>43</i></span>
+<span class="tr">咖啡党<i>38</i></span>
 <span class="tr">早餐信徒<i>37</i></span>
+<span class="tr">现制派<i>29</i></span>
+<span class="tr">薅羊毛大师<i>29</i></span>
 <span class="tr">得来速党<i>24</i></span>
 <span class="tr">大额玩家<i>16</i></span>
 <span class="tr">巨无霸死忠<i>12</i></span>
+<span class="tr">高频麦门<i>2</i></span>
 </div>
-<div class="hint">人格标签由 <b>5 / 10</b> 条确定性规则判定，同输入必得同结果，不靠大模型猜测。<br>得分 = 该维度的真实占比或件数，可逐条核验。</div>
+<div class="hint">人格标签由 <b>9 / 12</b> 条确定性规则判定，同输入必得同结果，不靠大模型猜测。<br>得分 = 该维度的真实占比或件数，可逐条核验。</div>
 </section>
 <section class="card">
 <div class="kick">你最常在什么时候来</div>
@@ -226,15 +262,16 @@ a:hover{text-decoration:underline}
 <div class="sub">8 月下了 <b>16</b> 单、花了 <b>¥599.6</b>；最淡的是 10 月，只有 <b>1</b> 单。</div>
 </section>
 <section class="card fire">
-<div class="kick" style="color:#FFE9B8">高光时刻</div>
-<div class="tit">这一年最 unforgettable 的几单</div>
+<svg class="arcs" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="none" aria-hidden="true"><path d="M6 76 C 6 14, 42 14, 50 76" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/><path d="M50 76 C 58 14, 94 14, 94 76" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/></svg>
+<div class="kick" style="color:var(--mcgold)">高光时刻</div>
+<div class="tit" style="color:#FFF">这一年最 unforgettable 的几单</div>
 <div class="hl">
 <div class="it"><div class="k">最贵一单</div><div class="v">¥156.5</div><div class="d">2026-08-15 · 到店堂食<br>巨无霸套餐、巨无霸双层套餐、麦辣鸡腿堡+麦旋风套餐、…</div></div>
 <div class="it"><div class="k">最早一单</div><div class="v">07:18</div><div class="d">2026-07-27 · 得来速<br>凌晨的麦当劳，只有你懂</div></div>
 <div class="it"><div class="k">单日连击</div><div class="v">3 单</div><div class="d">2026-08-15（周六）<br>当天合计 ¥210.2</div></div>
 <div class="it"><div class="k">最多件数</div><div class="v">6 件</div><div class="d">2026-08-15 · ¥156.5<br>这一单撑过了一个下午</div></div>
 </div></section>
-<section class="card warm">
+<section class="card tinted-red">
 <div class="kick">你的钱包</div>
 <div class="tit">用券省下 ¥182.5</div>
 <div class="grid4">
@@ -258,16 +295,18 @@ a:hover{text-decoration:underline}
 <div class="row"><span class="nm">周日</span><div class="bar"><div class="bar-f" style="width:13.4%;animation-delay:360msbackground:var(--yel);"></div></div><span class="vv">11单 · 13%</span></div>
 </div></section>
 <section class="cta">
+<svg class="arcs2" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="none" aria-hidden="true"><path d="M6 76 C 6 14, 42 14, 50 76" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/><path d="M50 76 C 58 14, 94 14, 94 76" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/></svg>
 <h3>这份年报，数据来自你的真实订单</h3>
 <p>接入麦当劳 MCP 后，任何人都能生成属于自己的这一份。</p>
 <p><a href="https://github.com/wangnuo-log/mcd-activity-radar">⚡ 麦麦活动雷达：活动开抢不错过</a><br><a href="https://github.com/wangnuo-log/mcd-wrapped" style="font-weight:800;text-decoration:underline">⭐ https://github.com/wangnuo-log/mcd-wrapped</a></p>
 <p style='margin-top:10px'>喜欢这份年报？点个 ⭐ Star，这是麦当劳程序员节创意开发大赛参赛作品。</p>
+<a class="gold-btn" href="https://github.com/wangnuo-log/mcd-wrapped">⭐ 点亮这个麦麦年报</a>
 </section>
 <div class="foot">
 数据源 <b>麦当劳中国 MCP</b> · <code>order-list</code> / <code>mall-order-list</code> / <code>query-my-account</code><br>
 本页面使用<b>脱敏示例数据</b>（<code>make_sample_data.py</code> 固定种子 42 生成），非任何真实用户的订单记录。<br>
 全部统计由 <code>wrapped_engine.py</code> 确定性计算，纯标准库、零第三方依赖、可单元测试。<br>
 麦当劳、McDonald's 及相关标识归其权利人所有，本作品<b>非麦当劳官方产品</b>，数据仅供参考。<br>
-生成于 2026-10-12 16:12
+生成于 2026-10-12 16:26
 </div>
 </main></body></html>

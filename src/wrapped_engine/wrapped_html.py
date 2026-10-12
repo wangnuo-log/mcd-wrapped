@@ -1,14 +1,15 @@
-"""麦麦年报 · Wrapped 风格 HTML 渲染器（单文件、零外部依赖）。
+"""麦麦年报 · 麦当劳品牌风格 HTML 渲染器（单文件、零外部依赖）。
 
 产出**单文件 HTML**：样式与脚本全部内联，双击即可打开，可直接部署到
 GitHub Pages 作为在线 demo。
 
 设计约定
 --------
-  - 深色卡片 + 荧光黄高亮：Wrapped 叙事感，鼓励截图分享
+  - 麦当劳品牌色：主红 #DA291C（McRed） + 金黄 #FFC72C（Golden Arches）+ 白/暖米白底
+  - 明亮卡片 + 金色拱门装饰 + 薯条条纹分隔：贴合麦当劳 App 的视觉语言
   - 竖屏卡列（max-width 460px）：手机截图即为一张社交图
-  - 所有图形均为 CSS 自绘（条形 / 柱状 / 环形），**不使用麦当劳官方 Logo**
-  - 品牌色仅取配色基因：红 #DA291C / 金黄 #FFC72C
+  - 所有图形均为 CSS/SVG 自绘，**不使用麦当劳官方 Logo**，仅取配色基因
+  - 关键色对比度符合 WCAG AA（正文 #1A1A1A on #FFF）
 
 用法
 ----
@@ -23,10 +24,29 @@ def esc(s):
     return _html.escape("" if s is None else str(s), quote=True)
 
 
+def _arcs_svg(size="150", cls="arcs"):
+    """自绘金色拱门（双弧），呼应品牌 Golden Arches 意象，纯 SVG。"""
+    return (
+        '<svg class="%s" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" '
+        'width="%s" height="%s" fill="none" aria-hidden="true">'
+        '<path d="M6 76 C 6 14, 42 14, 50 76" stroke="#FFC72C" stroke-width="13" '
+        'stroke-linecap="round"/>'
+        '<path d="M50 76 C 58 14, 94 14, 94 76" stroke="#FFC72C" stroke-width="13" '
+        'stroke-linecap="round"/>'
+        '</svg>' % (cls, size, size)
+    )
+
+
+def _fry_divider():
+    """薯条条纹分隔线：11 根金色小柱，象征薯条盒。"""
+    return ('<div class="fry-divider" aria-hidden="true">' +
+            "".join("<i></i>" for _ in range(11)) + "</div>")
+
+
 def _bar(pct, max_pct, color=None, delay=0):
     """自绘水平条形：pct 为占比，max_pct 用于视觉归一化。"""
     w = 0.0 if max_pct in (0, None) else min(100.0, pct * 100.0 / max_pct)
-    col = color or "var(--yel)"
+    col = color or "linear-gradient(90deg,var(--mcgold),#F5B800)"
     return ('<div class="bar"><div class="bar-f" style="width:%.2f%%;background:%s;'
             'animation-delay:%dms"></div></div>' % (w, col, delay))
 
@@ -40,136 +60,166 @@ def _cols(n, label, val):
 
 STYLE = """
 :root{
-  --red:#DA291C; --yel:#FFC72C; --ink:#141414; --card:#1C1C1E; --card2:#26262A;
-  --line:rgba(255,255,255,.08); --dim:#9A9AA0; --txt:#FFFFFF;
-  --green:#4ADE80; --blue:#60A5FA; --purple:#C084FC;
+  --mcred:#DA291C; --mcred-dark:#A31E14; --mcred-deep:#7A1610;
+  --mcgold:#FFC72C; --mcgold-deep:#E0A800; --mcgold-soft:#FFF5D6;
+  --ink:#1A1A1A; --ink-soft:#3A3A3A; --ink-mid:#6B6B6B; --ink-dim:#9A9A9A;
+  --paper:#FFFFFF; --paper-warm:#FFFDF7; --paper-cool:#F7F5F0;
+  --line:#EEEAE0; --line-soft:#F3EFE6;
+  --shadow:0 6px 24px rgba(218,41,28,.06), 0 2px 6px rgba(0,0,0,.04);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
-  font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  background:#0A0A0A;color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased;
-  padding:22px 0 40px;
+  font-family:"McDonaldland","Segoe UI",system-ui,-apple-system,"PingFang SC",
+    "Microsoft YaHei",sans-serif;
+  background:var(--paper-warm);color:var(--ink);line-height:1.55;
+  -webkit-font-smoothing:antialiased;padding:22px 0 40px;
 }
 .wrap{max-width:460px;margin:0 auto;padding:0 14px;display:flex;flex-direction:column;gap:14px}
-a{color:var(--yel);text-decoration:none}
+a{color:var(--mcred);text-decoration:none;font-weight:700}
 a:hover{text-decoration:underline}
 
 /* ---------- 卡片 ---------- */
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;
-  padding:24px 22px;position:relative;overflow:hidden}
-.card.warm{background:linear-gradient(160deg,#3A1A12,#1C1C1E 58%)}
-.card.gold{background:linear-gradient(160deg,#3A3011,#1C1C1E 60%)}
-.card.fire{background:linear-gradient(165deg,var(--red),#7A1610 62%,#1C1C1E 100%)}
-.kick{font-size:11.5px;letter-spacing:2px;color:var(--yel);font-weight:800;margin-bottom:12px}
-.kick.dim{color:var(--dim)}
-.tit{font-size:15.5px;font-weight:800;line-height:1.4}
-.sub{font-size:12.5px;color:var(--dim);margin-top:7px;line-height:1.7}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  padding:24px 22px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.card.tinted-red{background:linear-gradient(165deg,#FFE9E7 0%,#FFFFFF 55%)}
+.card.tinted-gold{background:linear-gradient(165deg,#FFF5D6 0%,#FFFFFF 55%)}
+.card.fire{background:linear-gradient(160deg,var(--mcred) 0%,#B71F14 60%,var(--mcred-deep) 100%);
+  color:#FFF;border-color:transparent}
+.kick{font-size:11.5px;letter-spacing:2.5px;color:var(--mcred);font-weight:800;
+  margin-bottom:12px;text-transform:uppercase}
+.kick.dim{color:var(--ink-mid)}
+.tit{font-size:16px;font-weight:800;line-height:1.4;color:var(--ink)}
+.sub{font-size:12.5px;color:var(--ink-mid);margin-top:8px;line-height:1.7}
 
-/* ---------- 封面 ---------- */
-.hero{background:linear-gradient(170deg,#DA291C 0%,#8E140D 55%,#1C1C1E 100%);
-  border:1px solid var(--line);padding:30px 24px 26px;text-align:center}
-.hero .lg{font-size:13px;letter-spacing:5px;color:#FFD9A0;font-weight:800}
-.hero h1{font-size:40px;font-weight:900;letter-spacing:1px;margin:10px 0 4px;line-height:1.1}
-.hero .yr{color:var(--yel)}
-.hero .tag{font-size:13px;color:#FFD9A0;margin-top:10px}
-.hero .rg{margin-top:16px;display:flex;justify-content:space-around;gap:8px;
-  border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
+/* ---------- 封面：红底金字 + 金色拱门 ---------- */
+.hero{background:linear-gradient(170deg,#DA291C 0%,#B71F14 60%,#7A1610 100%);
+  border:1px solid transparent;padding:34px 24px 28px;text-align:center;color:#FFF;
+  box-shadow:0 12px 40px rgba(218,41,28,.32);border-radius:20px;
+  position:relative;overflow:hidden}
+.hero .arcs{position:absolute;top:-38px;right:-38px;width:170px;height:170px;opacity:.14}
+.hero .lg{font-size:12px;letter-spacing:6px;color:var(--mcgold);font-weight:800;
+  position:relative;z-index:1}
+.hero h1{font-size:44px;font-weight:900;letter-spacing:1px;margin:12px 0 4px;line-height:1.1;
+  position:relative;z-index:1;text-shadow:0 2px 8px rgba(0,0,0,.18)}
+.hero .yr{color:var(--mcgold)}
+.hero .tag{font-size:13.5px;color:#FFD9A0;margin-top:12px;position:relative;z-index:1}
+.hero .tag b{color:var(--mcgold);font-weight:800}
+.hero .rg{margin-top:20px;display:flex;justify-content:space-around;gap:8px;
+  border-top:1px solid rgba(255,255,255,.22);padding-top:16px;position:relative;z-index:1}
 .hero .rg div{font-size:11.5px;color:#FFD9A0}
-.hero .rg b{display:block;font-size:17px;color:#fff;font-weight:800;font-variant-numeric:tabular-nums}
+.hero .rg b{display:block;font-size:17px;color:#fff;font-weight:800;
+  font-variant-numeric:tabular-nums}
 
 /* ---------- Hero 数字 ---------- */
 .hero-num{text-align:center}
-.hero-num .v{font-size:62px;font-weight:900;color:var(--yel);letter-spacing:-2px;line-height:1;
+.hero-num .v{font-size:64px;font-weight:900;color:var(--mcred);letter-spacing:-2px;line-height:1;
   font-variant-numeric:tabular-nums}
-.hero-num .v small{font-size:24px;font-weight:800;margin-right:2px}
-.hero-num .l{font-size:12.5px;color:var(--dim);margin-top:9px;letter-spacing:1px}
-.triplet{display:flex;justify-content:space-between;gap:8px;margin-top:18px;
-  border-top:1px solid var(--line);padding-top:16px}
+.hero-num .v small{font-size:26px;font-weight:800;margin-right:2px;color:var(--mcgold-deep)}
+.hero-num .l{font-size:13px;color:var(--ink-mid);margin-top:10px;letter-spacing:.5px}
+.triplet{display:flex;justify-content:space-between;gap:8px;margin-top:20px;
+  border-top:1px dashed var(--line);padding-top:18px}
 .triplet>div{text-align:center;flex:1}
-.triplet .n{font-size:23px;font-weight:800;color:var(--txt);font-variant-numeric:tabular-nums}
-.triplet .k{font-size:11px;color:var(--dim);margin-top:3px}
+.triplet .n{font-size:24px;font-weight:900;color:var(--mcred);font-variant-numeric:tabular-nums}
+.triplet .k{font-size:11px;color:var(--ink-mid);margin-top:4px}
 
 /* ---------- 人格标签 ---------- */
 .persona{text-align:center}
-.persona .lb{font-size:11.5px;color:var(--dim);letter-spacing:3px;font-weight:700;margin-bottom:8px}
-.persona .lg{display:inline-block;background:var(--yel);color:#1A1A1A;font-size:38px;
-  font-weight:900;letter-spacing:2px;padding:14px 30px;border-radius:18px;line-height:1.1;
-  box-shadow:0 10px 34px rgba(255,199,44,.24)}
-.traits{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:18px}
-.tr{background:var(--card2);border:1px solid var(--line);border-radius:999px;
-  padding:6px 12px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px}
-.tr i{font-style:normal;font-size:11px;color:var(--yel);font-variant-numeric:tabular-nums}
-.hint{font-size:11.5px;color:var(--dim);text-align:center;margin-top:14px;line-height:1.7}
+.persona .lb{font-size:11.5px;color:var(--ink-mid);letter-spacing:3px;font-weight:700;margin-bottom:10px}
+.persona .lg{display:inline-block;background:linear-gradient(135deg,var(--mcgold),#F5B800);
+  color:#1A1A1A;font-size:36px;font-weight:900;letter-spacing:2px;padding:16px 32px;
+  border-radius:18px;line-height:1.1;box-shadow:0 10px 34px rgba(255,199,44,.36);
+  border:3px solid #FFF;outline:2px solid var(--mcgold-deep);outline-offset:-6px}
+.traits{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:20px}
+.tr{background:#FFF;border:1.5px solid var(--mcgold);border-radius:999px;
+  padding:7px 13px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px;
+  color:var(--ink-soft)}
+.tr i{font-style:normal;font-size:11px;color:var(--mcred);font-variant-numeric:tabular-nums;font-weight:800}
+.hint{font-size:11.5px;color:var(--ink-mid);text-align:center;margin-top:16px;line-height:1.7}
 
 /* ---------- 条形 ---------- */
-.rows{display:flex;flex-direction:column;gap:11px;margin-top:6px}
+.rows{display:flex;flex-direction:column;gap:12px;margin-top:8px}
 .row{display:flex;align-items:center;gap:10px}
-.row .nm{width:74px;flex:0 0 74px;font-size:12.5px;font-weight:700;text-align:right;color:#E6E6EA}
-.row .bar{flex:1;height:22px;background:var(--card2);border-radius:7px;overflow:hidden}
-.row .bar-f{height:100%;border-radius:7px;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-.row .vv{width:66px;flex:0 0 66px;font-size:12px;color:var(--dim);
+.row .nm{width:74px;flex:0 0 74px;font-size:12.5px;font-weight:700;text-align:right;color:var(--ink-soft)}
+.row .bar{flex:1;height:24px;background:var(--line-soft);border-radius:8px;overflow:hidden}
+.row .bar-f{height:100%;border-radius:8px;animation:grow 1s cubic-bezier(.2,.8,.2,1) both;
+  background:linear-gradient(90deg,var(--mcgold),#F5B800)}
+.row .vv{width:70px;flex:0 0 70px;font-size:12px;color:var(--ink-mid);
   font-variant-numeric:tabular-nums}
 @keyframes grow{from{width:0}}
-.row.win .nm{color:var(--yel)}
+.row.win .nm{color:var(--mcred);font-weight:800}
+.row.win .bar-f{background:linear-gradient(90deg,var(--mcred),#B71F14)}
 
 /* ---------- 柱状 ---------- */
 .chart{display:flex;align-items:flex-end;gap:4px;justify-content:space-between;
-  height:150px;padding:8px 2px 0}
+  height:150px;padding:10px 2px 0}
 .col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
-.col-f{background:linear-gradient(180deg,var(--yel),#C99312);border-radius:5px 5px 2px 2px;
+.col-f{background:linear-gradient(180deg,var(--mcgold),#E0A800);border-radius:6px 6px 2px 2px;
   position:relative;min-height:6px;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
-.col-f span{position:absolute;left:0;right:0;top:-15px;text-align:center;font-size:10px;
-  color:var(--dim);font-variant-numeric:tabular-nums}
-.col-l{text-align:center;font-size:10px;color:var(--dim);margin-top:5px}
-.col.peak .col-f{background:linear-gradient(180deg,var(--red),#8E140D)}
-.col.peak .col-l{color:var(--red);font-weight:800}
+.col-f span{position:absolute;left:0;right:0;top:-16px;text-align:center;font-size:10px;
+  color:var(--ink-mid);font-variant-numeric:tabular-nums;font-weight:700}
+.col-l{text-align:center;font-size:10px;color:var(--ink-mid);margin-top:6px}
+.col.peak .col-f{background:linear-gradient(180deg,var(--mcred),#B71F14)}
+.col.peak .col-l{color:var(--mcred);font-weight:800}
 @keyframes rise{from{height:0}}
 
-/* ---------- 高光卡 ---------- */
-.hl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.hl .it{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
-.hl .k{font-size:11px;color:var(--yel);font-weight:800;letter-spacing:1px}
-.hl .v{font-size:20px;font-weight:800;margin-top:5px;font-variant-numeric:tabular-nums;line-height:1.2}
-.hl .d{font-size:11.5px;color:var(--dim);margin-top:5px;line-height:1.55}
+/* ---------- 高光卡（红底，白字）---------- */
+.hl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.hl .it{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:14px;padding:14px 15px;backdrop-filter:blur(4px)}
+.hl .k{font-size:11px;color:var(--mcgold);font-weight:800;letter-spacing:1px}
+.hl .v{font-size:22px;font-weight:900;margin-top:6px;font-variant-numeric:tabular-nums;line-height:1.2;color:#FFF}
+.hl .d{font-size:11.5px;color:#FFD9A0;margin-top:6px;line-height:1.55}
 
 /* ---------- 列表 ---------- */
-.list{display:flex;flex-direction:column;gap:9px;margin-top:6px}
-.li{display:flex;align-items:baseline;gap:11px;background:var(--card2);
-  border:1px solid var(--line);border-radius:12px;padding:11px 13px}
-.li .rk{font-size:15px;font-weight:900;color:var(--yel);width:22px;flex:0 0 22px;
+.list{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+.li{display:flex;align-items:baseline;gap:12px;background:var(--paper-warm);
+  border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.li .rk{font-size:16px;font-weight:900;color:var(--mcred);width:24px;flex:0 0 24px;
   font-variant-numeric:tabular-nums}
-.li .nm{flex:1;font-size:13px;font-weight:700;min-width:0}
-.li .vl{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;flex:0 0 auto}
+.li .nm{flex:1;font-size:13px;font-weight:700;min-width:0;color:var(--ink)}
+.li .vl{font-size:12.5px;color:var(--ink-mid);font-variant-numeric:tabular-nums;flex:0 0 auto;font-weight:600}
 
 /* ---------- 数字网格 ---------- */
-.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
-.gc{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
-.gc .n{font-size:25px;font-weight:800;color:var(--yel);font-variant-numeric:tabular-nums;
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.gc{background:var(--paper-warm);border:1px solid var(--line);border-radius:14px;padding:14px 15px}
+.gc .n{font-size:26px;font-weight:900;color:var(--mcred);font-variant-numeric:tabular-nums;
   line-height:1.1}
-.gc .k{font-size:11.5px;color:var(--dim);margin-top:4px;line-height:1.5}
+.gc .k{font-size:11.5px;color:var(--ink-mid);margin-top:5px;line-height:1.5}
 
 /* ---------- 时段环 ---------- */
-.slots{display:flex;flex-direction:column;gap:9px;margin-top:6px}
+.slots{display:flex;flex-direction:column;gap:10px;margin-top:8px}
 .sl{display:flex;align-items:center;gap:10px}
-.sl .hd{width:88px;flex:0 0 88px}
-.sl .hd b{font-size:12.5px;font-weight:700;display:block}
-.sl .hd span{font-size:10px;color:var(--dim)}
-.sl .bar{flex:1;height:16px;background:var(--card2);border-radius:5px;overflow:hidden}
-.sl .bar-f{height:100%;border-radius:5px;background:var(--yel);
-  animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-.sl .vv{width:52px;flex:0 0 52px;text-align:right;font-size:12px;font-weight:700;
-  font-variant-numeric:tabular-nums}
+.sl .hd{width:92px;flex:0 0 92px}
+.sl .hd b{font-size:12.5px;font-weight:700;display:block;color:var(--ink)}
+.sl .hd span{font-size:10px;color:var(--ink-dim)}
+.sl .bar{flex:1;height:18px;background:var(--line-soft);border-radius:6px;overflow:hidden}
+.sl .bar-f{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--mcgold),#F5B800);
+  animation:grow 1s cubic-bezier(.2,.8,.2,1) both}
+.sl .vv{width:54px;flex:0 0 54px;text-align:right;font-size:12px;font-weight:800;
+  font-variant-numeric:tabular-nums;color:var(--ink-soft)}
 
-/* ---------- 尾页 ---------- */
-.cta{background:linear-gradient(160deg,#FFC72C,#E0A800);color:#1A1A1A;text-align:center;
-  padding:26px 22px;border-radius:22px;border:1px solid var(--line)}
-.cta h3{font-size:19px;font-weight:900;letter-spacing:.5px}
-.cta p{font-size:12.5px;margin-top:8px;line-height:1.7;color:#4A3A08}
-.foot{font-size:11px;color:#5A5A5E;text-align:center;line-height:1.9;padding:0 14px}
-.foot code{background:#1A1A1A;color:#B8B8BE;padding:1px 6px;border-radius:5px}
-.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:999px;
-  background:var(--yel);color:#1A1A1A;vertical-align:middle;margin-left:6px}
+/* ---------- 薯条条纹分隔 ---------- */
+.fry-divider{display:flex;gap:3px;justify-content:center;margin:8px 0 4px;opacity:.85}
+.fry-divider i{width:5px;height:24px;background:var(--mcgold);border-radius:2px;
+  box-shadow:inset 0 -4px 0 var(--mcgold-deep)}
+
+/* ---------- 尾页 CTA（红底）---------- */
+.cta{background:linear-gradient(160deg,#DA291C 0%,#B71F14 100%);color:#FFF;text-align:center;
+  padding:28px 22px;border-radius:20px;box-shadow:0 12px 36px rgba(218,41,28,.28);
+  border:1px solid transparent;position:relative;overflow:hidden}
+.cta .arcs2{position:absolute;bottom:-46px;left:-32px;width:150px;height:150px;opacity:.16}
+.cta h3{font-size:20px;font-weight:900;letter-spacing:.5px;position:relative;z-index:1}
+.cta p{font-size:13px;margin-top:10px;line-height:1.75;color:#FFE9B8;position:relative;z-index:1}
+.cta a{color:var(--mcgold);font-weight:800}
+.cta .gold-btn{display:inline-block;margin-top:14px;background:var(--mcgold);color:#1A1A1A;
+  font-weight:900;font-size:14px;padding:11px 22px;border-radius:999px;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);position:relative;z-index:1}
+.foot{font-size:11px;color:var(--ink-dim);text-align:center;line-height:1.9;padding:0 14px}
+.foot b{color:var(--ink-mid);font-weight:700}
+.foot code{background:#EEEAE0;color:var(--ink-soft);padding:2px 7px;border-radius:5px;font-weight:600}
+.badge{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:999px;
+  background:var(--mcgold);color:#1A1A1A;vertical-align:middle;margin-left:6px}
 @media (prefers-reduced-motion:reduce){.bar-f,.col-f{animation:none}}
 """
 
@@ -198,6 +248,7 @@ def render_wrapped_html(report, repo_url="", radar_url=""):
 
     # ---------------- 封面 ----------------
     L.append('<section class="hero">')
+    L.append(_arcs_svg("170", "arcs"))
     L.append('<div class="lg">M C D &nbsp; W R A P P E D</div>')
     L.append('<h1>麦麦年报 <span class="yr">%s</span></h1>' % esc(year))
     L.append('<div class="tag">这一年，你和麦当劳的第 <b>%d</b> 次相遇</div>' % t["orders"])
@@ -208,10 +259,11 @@ def render_wrapped_html(report, repo_url="", radar_url=""):
     L.append("</section>")
 
     # ---------------- 总览 hero ----------------
-    L.append('<section class="card warm hero-num">')
+    L.append('<section class="card tinted-red hero-num">')
     L.append('<div class="kick">%s 总览</div>' % esc(year))
     L.append('<div class="v"><small>¥</small>%s</div>' % esc("%.0f" % t["total_paid"]))
     L.append('<div class="l">%d 天里，你一共为麦当劳花了这么多</div>' % t["span_days"])
+    L.append(_fry_divider())
     L.append('<div class="triplet">'
              '<div><div class="n">%d</div><div class="k">笔订单</div></div>'
              '<div><div class="n">%d</div><div class="k">件餐品</div></div>'
@@ -222,7 +274,7 @@ def render_wrapped_html(report, repo_url="", radar_url=""):
     L.append("</section>")
 
     # ---------------- 人格标签 ----------------
-    L.append('<section class="card gold persona">')
+    L.append('<section class="card tinted-gold persona">')
     L.append('<div class="lb">你的麦麦人格</div>')
     L.append('<div class="lg">%s</div>' % esc(per["label"]))
     L.append('<div class="traits">')
@@ -305,8 +357,9 @@ def render_wrapped_html(report, repo_url="", radar_url=""):
 
     # ---------------- 高光时刻 ----------------
     L.append('<section class="card fire">')
-    L.append('<div class="kick" style="color:#FFE9B8">高光时刻</div>')
-    L.append('<div class="tit">这一年最 unforgettable 的几单</div>')
+    L.append(_arcs_svg("150", "arcs"))
+    L.append('<div class="kick" style="color:var(--mcgold)">高光时刻</div>')
+    L.append('<div class="tit" style="color:#FFF">这一年最 unforgettable 的几单</div>')
     L.append('<div class="hl">')
     p = hl["priciest"]
     L.append('<div class="it"><div class="k">最贵一单</div><div class="v">¥%s</div>'
@@ -328,7 +381,7 @@ def render_wrapped_html(report, repo_url="", radar_url=""):
     L.append("</div></section>")
 
     # ---------------- 钱包与积分 ----------------
-    L.append('<section class="card warm">')
+    L.append('<section class="card tinted-red">')
     L.append('<div class="kick">你的钱包</div>')
     L.append('<div class="tit">用券省下 ¥%s</div>' % esc(cp["total_saved"]))
     L.append('<div class="grid4">')
@@ -373,12 +426,15 @@ def render_wrapped_html(report, repo_url="", radar_url=""):
         extra.append('<a href="%s" style="font-weight:800;text-decoration:underline">'
                      '⭐ %s</a>' % (esc(repo_url), esc(repo_url)))
     L.append('<section class="cta">')
+    L.append(_arcs_svg("150", "arcs2"))
     L.append('<h3>这份年报，数据来自你的真实订单</h3>')
     L.append("<p>接入麦当劳 MCP 后，任何人都能生成属于自己的这一份。</p>")
     if extra:
         L.append("<p>" + "<br>".join(extra) + "</p>")
     L.append("<p style='margin-top:10px'>喜欢这份年报？点个 ⭐ Star，"
              "这是麦当劳程序员节创意开发大赛参赛作品。</p>")
+    if repo_url:
+        L.append('<a class="gold-btn" href="%s">⭐ 点亮这个麦麦年报</a>' % esc(repo_url))
     L.append("</section>")
 
     # ---------------- 脚注 ----------------
