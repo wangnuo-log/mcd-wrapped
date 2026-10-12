@@ -229,7 +229,7 @@ mcd-wrapped/
 
 | 项目 | 定位 | 状态 |
 |---|---|---|
-| [mcd-wrapped](.) | **面向过去**：年度复盘、社交传播 | 本项目 |
+| [mcd-wrapped](.) | **面向过去**：年度复盘、社交传播 | 本项目 · [Issue #533](https://github.com/M-China/mcd-developer-innovation-challenge/issues/533) |
 | [mcd-activity-radar](https://github.com/wangnuo-log/mcd-activity-radar) | **面向未来**：活动聚合、开抢倒计时 | 已参赛 · [Issue #37](https://github.com/M-China/mcd-developer-innovation-challenge/issues/37) |
 
 两个项目共用同一套 MCP Token、同一个 mcd-mcp 连接器配置，报告中互相留了入口。
