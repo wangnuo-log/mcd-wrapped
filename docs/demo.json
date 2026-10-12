@@ -1,0 +1,348 @@
+{
+  "meta": {
+    "generated_at": "2026-10-12 16:17",
+    "range_from": "2026-01-05",
+    "range_to": "2026-10-11",
+    "orders": 82,
+    "profile": {
+      "city": "深圳",
+      "cityCode": "4403",
+      "persona": "程序员 · 早餐+夜宵重度用户"
+    }
+  },
+  "totals": {
+    "orders": 82,
+    "total_paid": 2650.0,
+    "total_items": 219,
+    "avg_paid": 32.3,
+    "avg_items": 2.7,
+    "first_order": "2026-01-05",
+    "last_order": "2026-10-11",
+    "first_store": "深圳罗湖东门店",
+    "span_days": 279,
+    "avg_per_week": 2.06,
+    "busiest_store": "深圳罗湖莲塘村店",
+    "store_count": 5
+  },
+  "by_category": [
+    {
+      "name": "饮品",
+      "qty": 83,
+      "pct": 37.9,
+      "amount": 1058.0
+    },
+    {
+      "name": "小食",
+      "qty": 41,
+      "pct": 18.7,
+      "amount": 613.5
+    },
+    {
+      "name": "汉堡",
+      "qty": 39,
+      "pct": 17.8,
+      "amount": 842.0
+    },
+    {
+      "name": "早餐",
+      "qty": 29,
+      "pct": 13.2,
+      "amount": 441.0
+    },
+    {
+      "name": "甜品",
+      "qty": 19,
+      "pct": 8.7,
+      "amount": 285.0
+    },
+    {
+      "name": "套餐",
+      "qty": 8,
+      "pct": 3.7,
+      "amount": 272.0
+    }
+  ],
+  "by_slot": [
+    {
+      "name": "早餐",
+      "hours": "06:00–10:00",
+      "orders": 30,
+      "pct": 36.6
+    },
+    {
+      "name": "午餐",
+      "hours": "10:00–14:00",
+      "orders": 19,
+      "pct": 23.2
+    },
+    {
+      "name": "下午茶",
+      "hours": "14:00–17:00",
+      "orders": 13,
+      "pct": 15.9
+    },
+    {
+      "name": "晚餐",
+      "hours": "17:00–21:00",
+      "orders": 14,
+      "pct": 17.1
+    },
+    {
+      "name": "深夜",
+      "hours": "21:00–次日 06:00",
+      "orders": 6,
+      "pct": 7.3
+    }
+  ],
+  "by_channel": [
+    {
+      "name": "麦乐送",
+      "orders": 35,
+      "pct": 42.7,
+      "amount": 1199.1
+    },
+    {
+      "name": "到店堂食",
+      "orders": 24,
+      "pct": 29.3,
+      "amount": 924.5
+    },
+    {
+      "name": "得来速",
+      "orders": 20,
+      "pct": 24.4,
+      "amount": 473.4
+    },
+    {
+      "name": "到店自取",
+      "orders": 3,
+      "pct": 3.7,
+      "amount": 53.0
+    }
+  ],
+  "by_month": [
+    {
+      "month": 1,
+      "orders": 9,
+      "amount": 256.0
+    },
+    {
+      "month": 2,
+      "orders": 5,
+      "amount": 148.5
+    },
+    {
+      "month": 3,
+      "orders": 7,
+      "amount": 193.0
+    },
+    {
+      "month": 4,
+      "orders": 8,
+      "amount": 234.5
+    },
+    {
+      "month": 5,
+      "orders": 8,
+      "amount": 174.0
+    },
+    {
+      "month": 6,
+      "orders": 5,
+      "amount": 171.4
+    },
+    {
+      "month": 7,
+      "orders": 15,
+      "amount": 537.5
+    },
+    {
+      "month": 8,
+      "orders": 16,
+      "amount": 599.6
+    },
+    {
+      "month": 9,
+      "orders": 8,
+      "amount": 312.0
+    },
+    {
+      "month": 10,
+      "orders": 1,
+      "amount": 23.5
+    }
+  ],
+  "weekday": [
+    {
+      "name": "周一",
+      "orders": 15,
+      "amount": 479.8,
+      "pct": 18.3
+    },
+    {
+      "name": "周二",
+      "orders": 11,
+      "amount": 386.0,
+      "pct": 13.4
+    },
+    {
+      "name": "周三",
+      "orders": 10,
+      "amount": 229.4,
+      "pct": 12.2
+    },
+    {
+      "name": "周四",
+      "orders": 12,
+      "amount": 280.0,
+      "pct": 14.6
+    },
+    {
+      "name": "周五",
+      "orders": 6,
+      "amount": 245.5,
+      "pct": 7.3
+    },
+    {
+      "name": "周六",
+      "orders": 17,
+      "amount": 664.7,
+      "pct": 20.7
+    },
+    {
+      "name": "周日",
+      "orders": 11,
+      "amount": 364.6,
+      "pct": 13.4
+    }
+  ],
+  "top_items": [
+    {
+      "name": "柠檬茶",
+      "qty": 20,
+      "amount": 240.0
+    },
+    {
+      "name": "可口可乐零度",
+      "qty": 15,
+      "amount": 142.5
+    },
+    {
+      "name": "麦辣鸡翅（3只）",
+      "qty": 10,
+      "amount": 250.0
+    },
+    {
+      "name": "麦乐鸡（4块）",
+      "qty": 10,
+      "amount": 125.0
+    },
+    {
+      "name": "吉士蛋麦满分",
+      "qty": 9,
+      "amount": 85.5
+    },
+    {
+      "name": "卡布奇诺",
+      "qty": 9,
+      "amount": 166.5
+    },
+    {
+      "name": "冰美式",
+      "qty": 8,
+      "amount": 132.0
+    },
+    {
+      "name": "可口可乐中杯",
+      "qty": 8,
+      "amount": 68.0
+    }
+  ],
+  "highlights": {
+    "priciest": {
+      "date": "2026-08-15",
+      "time": "12:30",
+      "paid": 156.5,
+      "store": "深圳罗湖水贝店",
+      "channel": "到店堂食",
+      "items": "巨无霸套餐、巨无霸双层套餐、麦辣鸡腿堡+麦旋风套餐、开心乐园餐（麦乐鸡4块）、麦旋风（华夫筒）、大薯条",
+      "items_count": 6
+    },
+    "latest": {
+      "date": "2026-03-02",
+      "time": "23:25",
+      "paid": 12.5,
+      "store": "深圳罗湖笋岗店",
+      "channel": "麦乐送",
+      "items": "麦乐鸡（4块）×2",
+      "items_count": 2
+    },
+    "earliest": {
+      "date": "2026-07-27",
+      "time": "07:18",
+      "paid": 29.5,
+      "store": "深圳罗湖笋岗店",
+      "channel": "得来速",
+      "items": "卡布奇诺×2、猪柳蛋麦满分",
+      "items_count": 3
+    },
+    "most_items": {
+      "date": "2026-08-15",
+      "time": "12:30",
+      "paid": 156.5,
+      "store": "深圳罗湖水贝店",
+      "channel": "到店堂食",
+      "items": "巨无霸套餐、巨无霸双层套餐、麦辣鸡腿堡+麦旋风套餐、开心乐园餐（麦乐鸡4块）、麦旋风（华夫筒）、大薯条",
+      "items_count": 6
+    },
+    "busiest_day": {
+      "date": "2026-08-15",
+      "orders": 3,
+      "amount": 210.2,
+      "weekday": "周六"
+    }
+  },
+  "coupon": {
+    "used_orders": 24,
+    "usage_rate": 29.3,
+    "total_saved": 182.5,
+    "avg_saved": 7.6,
+    "top": {
+      "name": "新品尝鲜 5 折券",
+      "count": 11
+    },
+    "avg_paid_used": 36.7,
+    "avg_paid_unused": 30.5
+  },
+  "points": {
+    "earned": 2628,
+    "per_order": 32.0
+  },
+  "persona": {
+    "label": "宅家麦乐送",
+    "traits": [
+      [
+        "宅家麦乐送",
+        42.7
+      ],
+      [
+        "早餐信徒",
+        36.6
+      ],
+      [
+        "得来速党",
+        24.4
+      ],
+      [
+        "大额玩家",
+        15.9
+      ],
+      [
+        "巨无霸死忠",
+        12
+      ]
+    ],
+    "rule_hits": 5,
+    "rule_total": 10
+  }
+}

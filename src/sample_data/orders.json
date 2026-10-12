@@ -1,0 +1,2132 @@
+{
+ "schema": "mcd-wrapped-sample/v1",
+ "note": "示例数据，非任何真实用户的订单。由 make_sample_data.py 固定种子 42 生成，可完全复现。",
+ "profile": {
+  "city": "深圳",
+  "cityCode": "4403",
+  "persona": "程序员 · 早餐+夜宵重度用户"
+ },
+ "generatedAt": "2026-10-12 15:00",
+ "range": {
+  "from": "2026-01-01",
+  "to": "2026-10-12"
+ },
+ "orders": [
+  {
+   "orderId": "20260105000000",
+   "createTime": "2026-01-05 16:05:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "大薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 12.0,
+   "pointEarned": 12
+  },
+  {
+   "orderId": "20260108000000",
+   "createTime": "2026-01-08 12:37:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "冰美式",
+     "category": "饮品",
+     "qty": 2,
+     "price": 16.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 16.5,
+   "pointEarned": 16
+  },
+  {
+   "orderId": "20260110000000",
+   "createTime": "2026-01-10 19:06:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "可口可乐中杯",
+     "category": "饮品",
+     "qty": 1,
+     "price": 8.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 8.5,
+   "pointEarned": 8
+  },
+  {
+   "orderId": "20260115000000",
+   "createTime": "2026-01-15 08:55:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "橙汁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 10.5
+    },
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 1,
+     "price": 18.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 38.5,
+   "pointEarned": 38
+  },
+  {
+   "orderId": "20260119000000",
+   "createTime": "2026-01-19 08:28:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 1,
+     "price": 18.5
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 30.5,
+   "pointEarned": 30
+  },
+  {
+   "orderId": "20260120000000",
+   "createTime": "2026-01-20 21:14:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 25.0,
+   "pointEarned": 25
+  },
+  {
+   "orderId": "20260122000000",
+   "createTime": "2026-01-22 21:56:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "开心乐园餐（麦乐鸡4块）",
+     "category": "套餐",
+     "qty": 2,
+     "price": 32.5
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 44.5,
+   "pointEarned": 44
+  },
+  {
+   "orderId": "20260124000000",
+   "createTime": "2026-01-24 13:37:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "大薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 12.0
+    },
+    {
+     "name": "吉士汉堡套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 21.5
+    },
+    {
+     "name": "板烧鸡腿堡套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 28.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 62.0,
+   "pointEarned": 62
+  },
+  {
+   "orderId": "20260129000000",
+   "createTime": "2026-01-29 13:29:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 1,
+     "price": 18.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 18.5,
+   "pointEarned": 18
+  },
+  {
+   "orderId": "20260207000000",
+   "createTime": "2026-02-07 18:32:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "巨无霸双层套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 35.5
+    },
+    {
+     "name": "中薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "满 30 减 8 元券",
+   "discount": 8.0,
+   "paid": 37.0,
+   "pointEarned": 37
+  },
+  {
+   "orderId": "20260209000000",
+   "createTime": "2026-02-09 19:15:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "板烧鸡腿堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 13.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 13.0,
+   "pointEarned": 13
+  },
+  {
+   "orderId": "20260218000000",
+   "createTime": "2026-02-18 20:13:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "麦旋风（奥利奥）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 18.0
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 2,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 30.0,
+   "pointEarned": 30
+  },
+  {
+   "orderId": "20260223000000",
+   "createTime": "2026-02-23 07:52:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "猪柳蛋麦满分套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 20.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 20.5,
+   "pointEarned": 20
+  },
+  {
+   "orderId": "20260224000000",
+   "createTime": "2026-02-24 17:32:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "薯饼（6块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 8.5
+    },
+    {
+     "name": "双层吉士堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 15.5
+    },
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 1,
+     "price": 7.5
+    },
+    {
+     "name": "麦乐鸡（6块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 16.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 48.0,
+   "pointEarned": 48
+  },
+  {
+   "orderId": "20260302000000",
+   "createTime": "2026-03-02 23:25:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦乐鸡（4块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 12.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 12.5,
+   "pointEarned": 12
+  },
+  {
+   "orderId": "20260303000000",
+   "createTime": "2026-03-03 16:06:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "新地（草莓）",
+     "category": "甜品",
+     "qty": 2,
+     "price": 11.5
+    },
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    },
+    {
+     "name": "麦旋风（华夫筒）",
+     "category": "甜品",
+     "qty": 2,
+     "price": 17.0
+    }
+   ],
+   "couponName": "麦乐送免配送费券",
+   "discount": 6.0,
+   "paid": 47.5,
+   "pointEarned": 47
+  },
+  {
+   "orderId": "20260304000000",
+   "createTime": "2026-03-04 17:28:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "到店自取",
+   "items": [
+    {
+     "name": "麦辣鸡腿堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 14.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 14.5,
+   "pointEarned": 14
+  },
+  {
+   "orderId": "20260307000000",
+   "createTime": "2026-03-07 12:57:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "巨无霸套餐",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 29.0
+    },
+    {
+     "name": "中薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "双层吉士堡",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 15.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 54.0,
+   "pointEarned": 54
+  },
+  {
+   "orderId": "20260317000000",
+   "createTime": "2026-03-17 07:52:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 2,
+     "price": 18.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 18.5,
+   "pointEarned": 18
+  },
+  {
+   "orderId": "20260324000000",
+   "createTime": "2026-03-24 07:19:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 2,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 12.0,
+   "pointEarned": 12
+  },
+  {
+   "orderId": "20260329000000",
+   "createTime": "2026-03-29 07:41:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "双层猪柳蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 12.5
+    },
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 2,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 34.0,
+   "pointEarned": 34
+  },
+  {
+   "orderId": "20260402000000",
+   "createTime": "2026-04-02 07:19:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "双层猪柳蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 12.5
+    }
+   ],
+   "couponName": "麦辣鸡腿堡 立减 6 元",
+   "discount": 6.0,
+   "paid": 16.0,
+   "pointEarned": 16
+  },
+  {
+   "orderId": "20260404000000",
+   "createTime": "2026-04-04 19:39:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "麦旋风（奥利奥）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 18.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 18.0,
+   "pointEarned": 18
+  },
+  {
+   "orderId": "20260405000000",
+   "createTime": "2026-04-05 14:17:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "新地（草莓）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 11.5
+    },
+    {
+     "name": "麦旋风（原味）",
+     "category": "甜品",
+     "qty": 2,
+     "price": 13.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 25.0,
+   "pointEarned": 25
+  },
+  {
+   "orderId": "20260409000000",
+   "createTime": "2026-04-09 17:00:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦乐鸡（4块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 12.5
+    },
+    {
+     "name": "猪扒包",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 8.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 21.0,
+   "pointEarned": 21
+  },
+  {
+   "orderId": "20260410000000",
+   "createTime": "2026-04-10 12:37:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "板烧鸡腿堡套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 28.5
+    },
+    {
+     "name": "巨无霸",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 13.5
+    },
+    {
+     "name": "麦香鱼",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 13.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 55.5,
+   "pointEarned": 55
+  },
+  {
+   "orderId": "20260413000000",
+   "createTime": "2026-04-13 20:39:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "到店自取",
+   "items": [
+    {
+     "name": "猪扒包",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 8.5
+    },
+    {
+     "name": "大薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 20.5,
+   "pointEarned": 20
+  },
+  {
+   "orderId": "20260426000000",
+   "createTime": "2026-04-26 11:54:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "开心乐园餐（麦乐鸡4块）",
+     "category": "套餐",
+     "qty": 1,
+     "price": 32.5
+    },
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    }
+   ],
+   "couponName": "满 30 减 8 元券",
+   "discount": 8.0,
+   "paid": 49.5,
+   "pointEarned": 49
+  },
+  {
+   "orderId": "20260429000000",
+   "createTime": "2026-04-29 07:32:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    },
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 1,
+     "price": 7.5
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 29.0,
+   "pointEarned": 29
+  },
+  {
+   "orderId": "20260505000000",
+   "createTime": "2026-05-05 13:50:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "中薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 9.5,
+   "pointEarned": 9
+  },
+  {
+   "orderId": "20260507000000",
+   "createTime": "2026-05-07 07:38:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 12.0,
+   "pointEarned": 12
+  },
+  {
+   "orderId": "20260516000000",
+   "createTime": "2026-05-16 23:16:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "麦香鸡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 11.5
+    },
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 46.0,
+   "pointEarned": 46
+  },
+  {
+   "orderId": "20260518000000",
+   "createTime": "2026-05-18 08:50:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦香鱼早餐套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 22.5
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 34.5,
+   "pointEarned": 34
+  },
+  {
+   "orderId": "20260520000000",
+   "createTime": "2026-05-20 07:42:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "可口可乐中杯",
+     "category": "饮品",
+     "qty": 2,
+     "price": 8.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 8.5,
+   "pointEarned": 8
+  },
+  {
+   "orderId": "20260523000000",
+   "createTime": "2026-05-23 08:20:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "冰美式",
+     "category": "饮品",
+     "qty": 1,
+     "price": 16.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 26.0,
+   "pointEarned": 26
+  },
+  {
+   "orderId": "20260527000000",
+   "createTime": "2026-05-27 08:46:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "猪柳蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 11.0
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 2,
+     "price": 12.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 23.0,
+   "pointEarned": 23
+  },
+  {
+   "orderId": "20260528000000",
+   "createTime": "2026-05-28 13:15:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 10.5,
+   "paid": 14.5,
+   "pointEarned": 14
+  },
+  {
+   "orderId": "20260610000000",
+   "createTime": "2026-06-10 15:28:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "麦旋风（奥利奥）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 18.0
+    },
+    {
+     "name": "拿铁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 19.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 37.5,
+   "pointEarned": 37
+  },
+  {
+   "orderId": "20260612000000",
+   "createTime": "2026-06-12 08:35:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "猪柳蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 11.0
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 5.0,
+   "paid": 6.0,
+   "pointEarned": 6
+  },
+  {
+   "orderId": "20260615000000",
+   "createTime": "2026-06-15 13:29:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "开心乐园餐（麦乐鸡4块）",
+     "category": "套餐",
+     "qty": 1,
+     "price": 32.5
+    },
+    {
+     "name": "薯饼（6块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 8.5
+    }
+   ],
+   "couponName": "麦乐送免配送费券",
+   "discount": 6.0,
+   "paid": 35.0,
+   "pointEarned": 35
+  },
+  {
+   "orderId": "20260617000000",
+   "createTime": "2026-06-17 08:41:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "可口可乐中杯",
+     "category": "饮品",
+     "qty": 1,
+     "price": 8.5
+    },
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 2,
+     "price": 9.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 8.1,
+   "paid": 9.9,
+   "pointEarned": 9
+  },
+  {
+   "orderId": "20260629000000",
+   "createTime": "2026-06-29 13:01:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "板烧鸡腿堡套餐",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 28.5
+    },
+    {
+     "name": "巨无霸双层套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 35.5
+    },
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    }
+   ],
+   "couponName": "麦辣鸡腿堡 立减 6 元",
+   "discount": 6.0,
+   "paid": 83.0,
+   "pointEarned": 83
+  },
+  {
+   "orderId": "20260701000000",
+   "createTime": "2026-07-01 08:31:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "吉士蛋麦满分套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 18.5
+    },
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 1,
+     "price": 18.5
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 46.5,
+   "pointEarned": 46
+  },
+  {
+   "orderId": "20260704000000",
+   "createTime": "2026-07-04 18:53:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦乐鸡（6块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 16.5
+    },
+    {
+     "name": "双层吉士堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 15.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 32.0,
+   "pointEarned": 32
+  },
+  {
+   "orderId": "20260706000000",
+   "createTime": "2026-07-06 07:25:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "橙汁",
+     "category": "饮品",
+     "qty": 2,
+     "price": 10.5
+    }
+   ],
+   "couponName": "麦辣鸡腿堡 立减 6 元",
+   "discount": 4.7,
+   "paid": 5.8,
+   "pointEarned": 5
+  },
+  {
+   "orderId": "20260710000000",
+   "createTime": "2026-07-10 08:53:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦满分套餐（吉士蛋）",
+     "category": "早餐",
+     "qty": 1,
+     "price": 19.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 19.5,
+   "pointEarned": 19
+  },
+  {
+   "orderId": "20260711000000",
+   "createTime": "2026-07-11 08:46:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦满分套餐（吉士蛋）",
+     "category": "早餐",
+     "qty": 1,
+     "price": 19.5
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 2,
+     "price": 12.0
+    },
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 1,
+     "price": 7.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 39.0,
+   "pointEarned": 39
+  },
+  {
+   "orderId": "20260714000000",
+   "createTime": "2026-07-14 13:49:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "开心乐园餐（麦乐鸡4块）",
+     "category": "套餐",
+     "qty": 1,
+     "price": 32.5
+    },
+    {
+     "name": "燕麦拿铁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 23.0
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 2,
+     "price": 9.5
+    }
+   ],
+   "couponName": "满 30 减 8 元券",
+   "discount": 8.0,
+   "paid": 57.0,
+   "pointEarned": 57
+  },
+  {
+   "orderId": "20260719000000",
+   "createTime": "2026-07-19 16:26:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "可口可乐中杯",
+     "category": "饮品",
+     "qty": 1,
+     "price": 8.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 3.8,
+   "paid": 4.7,
+   "pointEarned": 4
+  },
+  {
+   "orderId": "20260719000000",
+   "createTime": "2026-07-19 21:23:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦辣鸡腿堡",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 14.5
+    },
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    },
+    {
+     "name": "麦旋风（原味）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 13.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 40.0,
+   "pointEarned": 40
+  },
+  {
+   "orderId": "20260720000000",
+   "createTime": "2026-07-20 08:35:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "麦满分套餐（吉士蛋）",
+     "category": "早餐",
+     "qty": 1,
+     "price": 19.5
+    },
+    {
+     "name": "冰美式",
+     "category": "饮品",
+     "qty": 1,
+     "price": 16.5
+    },
+    {
+     "name": "双层猪柳蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 12.5
+    }
+   ],
+   "couponName": "麦乐送免配送费券",
+   "discount": 6.0,
+   "paid": 52.0,
+   "pointEarned": 52
+  },
+  {
+   "orderId": "20260721000000",
+   "createTime": "2026-07-21 11:44:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    },
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 1,
+     "price": 7.5
+    },
+    {
+     "name": "巨无霸套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 29.0
+    },
+    {
+     "name": "麦辣鸡腿堡套餐",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 30.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 10.5,
+   "paid": 81.5,
+   "pointEarned": 81
+  },
+  {
+   "orderId": "20260724000000",
+   "createTime": "2026-07-24 21:21:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦旋风（原味）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 13.5
+    },
+    {
+     "name": "麦旋风（奥利奥）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 18.0
+    },
+    {
+     "name": "麦乐鸡（4块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 12.5
+    },
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 1,
+     "price": 25.0
+    }
+   ],
+   "couponName": "满 30 减 8 元券",
+   "discount": 8.0,
+   "paid": 61.0,
+   "pointEarned": 61
+  },
+  {
+   "orderId": "20260725000000",
+   "createTime": "2026-07-25 16:38:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "麦旋风（原味）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 13.5
+    }
+   ],
+   "couponName": "麦辣鸡腿堡 立减 6 元",
+   "discount": 6.0,
+   "paid": 7.5,
+   "pointEarned": 7
+  },
+  {
+   "orderId": "20260727000000",
+   "createTime": "2026-07-27 07:18:00",
+   "storeCode": "4403005",
+   "storeName": "深圳罗湖笋岗店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 2,
+     "price": 18.5
+    },
+    {
+     "name": "猪柳蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 11.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 29.5,
+   "pointEarned": 29
+  },
+  {
+   "orderId": "20260728000000",
+   "createTime": "2026-07-28 12:11:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "巨无霸双层套餐",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 35.5
+    },
+    {
+     "name": "麦乐鸡（6块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 16.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 52.0,
+   "pointEarned": 52
+  },
+  {
+   "orderId": "20260729000000",
+   "createTime": "2026-07-29 08:20:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 9.5,
+   "pointEarned": 9
+  },
+  {
+   "orderId": "20260801000000",
+   "createTime": "2026-08-01 08:34:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "橙汁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 10.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 10.5,
+   "pointEarned": 10
+  },
+  {
+   "orderId": "20260802000000",
+   "createTime": "2026-08-02 14:15:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦乐鸡（4块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 12.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 5.6,
+   "paid": 6.9,
+   "pointEarned": 6
+  },
+  {
+   "orderId": "20260804000000",
+   "createTime": "2026-08-04 16:55:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "麦旋风（华夫筒）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 17.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 17.0,
+   "pointEarned": 17
+  },
+  {
+   "orderId": "20260806000000",
+   "createTime": "2026-08-06 12:52:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "板烧鸡腿堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 13.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 13.0,
+   "pointEarned": 13
+  },
+  {
+   "orderId": "20260808000000",
+   "createTime": "2026-08-08 15:32:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "薯饼（6块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 8.5
+    },
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 1,
+     "price": 7.5
+    },
+    {
+     "name": "中薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "橙汁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 10.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 36.0,
+   "pointEarned": 36
+  },
+  {
+   "orderId": "20260815000000",
+   "createTime": "2026-08-15 07:46:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "吉士蛋麦满分套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 18.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 8.3,
+   "paid": 10.2,
+   "pointEarned": 10
+  },
+  {
+   "orderId": "20260815000000",
+   "createTime": "2026-08-15 12:30:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "巨无霸套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 29.0
+    },
+    {
+     "name": "巨无霸双层套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 35.5
+    },
+    {
+     "name": "麦辣鸡腿堡+麦旋风套餐",
+     "category": "套餐",
+     "qty": 1,
+     "price": 38.5
+    },
+    {
+     "name": "开心乐园餐（麦乐鸡4块）",
+     "category": "套餐",
+     "qty": 1,
+     "price": 32.5
+    },
+    {
+     "name": "麦旋风（华夫筒）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 17.0
+    },
+    {
+     "name": "大薯条",
+     "category": "小食",
+     "qty": 1,
+     "price": 12.0
+    }
+   ],
+   "couponName": "满 30 减 8 元券",
+   "discount": 8.0,
+   "paid": 156.5,
+   "pointEarned": 156
+  },
+  {
+   "orderId": "20260815000000",
+   "createTime": "2026-08-15 14:56:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    },
+    {
+     "name": "可口可乐中杯",
+     "category": "饮品",
+     "qty": 2,
+     "price": 8.5
+    },
+    {
+     "name": "燕麦拿铁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 23.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 43.5,
+   "pointEarned": 43
+  },
+  {
+   "orderId": "20260816000000",
+   "createTime": "2026-08-16 19:36:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 1,
+     "price": 7.5
+    },
+    {
+     "name": "麦辣鸡腿堡+麦旋风套餐",
+     "category": "套餐",
+     "qty": 1,
+     "price": 38.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 46.0,
+   "pointEarned": 46
+  },
+  {
+   "orderId": "20260819000000",
+   "createTime": "2026-08-19 20:22:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦香鸡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 11.5
+    },
+    {
+     "name": "猪扒包",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 8.5
+    },
+    {
+     "name": "新地（草莓）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 11.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 10.5,
+   "paid": 21.0,
+   "pointEarned": 21
+  },
+  {
+   "orderId": "20260821000000",
+   "createTime": "2026-08-21 08:47:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "麦香鱼早餐套餐",
+     "category": "早餐",
+     "qty": 2,
+     "price": 22.5
+    },
+    {
+     "name": "吉士蛋麦满分套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 18.5
+    },
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 1,
+     "price": 9.5
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 10.5,
+   "paid": 49.5,
+   "pointEarned": 49
+  },
+  {
+   "orderId": "20260824000000",
+   "createTime": "2026-08-24 13:31:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "拿铁",
+     "category": "饮品",
+     "qty": 2,
+     "price": 19.5
+    },
+    {
+     "name": "板烧鸡腿堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 13.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 32.5,
+   "pointEarned": 32
+  },
+  {
+   "orderId": "20260827000000",
+   "createTime": "2026-08-27 11:31:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "麦乐鸡（4块）",
+     "category": "小食",
+     "qty": 2,
+     "price": 12.5
+    },
+    {
+     "name": "拿铁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 19.5
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 10.5,
+   "paid": 21.5,
+   "pointEarned": 21
+  },
+  {
+   "orderId": "20260829000000",
+   "createTime": "2026-08-29 07:19:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "麦满分套餐（吉士蛋）",
+     "category": "早餐",
+     "qty": 1,
+     "price": 19.5
+    },
+    {
+     "name": "冰美式",
+     "category": "饮品",
+     "qty": 1,
+     "price": 16.5
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 2,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 45.5,
+   "pointEarned": 45
+  },
+  {
+   "orderId": "20260830000000",
+   "createTime": "2026-08-30 08:44:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "卡布奇诺",
+     "category": "饮品",
+     "qty": 1,
+     "price": 18.5
+    },
+    {
+     "name": "吉士蛋麦满分",
+     "category": "早餐",
+     "qty": 2,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 28.0,
+   "pointEarned": 28
+  },
+  {
+   "orderId": "20260831000000",
+   "createTime": "2026-08-31 15:24:00",
+   "storeCode": "4403004",
+   "storeName": "深圳罗湖水贝店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "中薯条",
+     "category": "小食",
+     "qty": 2,
+     "price": 9.5
+    },
+    {
+     "name": "麦乐鸡（6块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 16.5
+    },
+    {
+     "name": "拿铁",
+     "category": "饮品",
+     "qty": 2,
+     "price": 19.5
+    },
+    {
+     "name": "冰美式",
+     "category": "饮品",
+     "qty": 1,
+     "price": 16.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 62.0,
+   "pointEarned": 62
+  },
+  {
+   "orderId": "20260903000000",
+   "createTime": "2026-09-03 08:36:00",
+   "storeCode": "4403002",
+   "storeName": "深圳罗湖翠竹路店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 2,
+     "price": 12.0
+    },
+    {
+     "name": "猪柳蛋麦满分套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 20.5
+    },
+    {
+     "name": "热豆浆",
+     "category": "饮品",
+     "qty": 2,
+     "price": 7.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 40.0,
+   "pointEarned": 40
+  },
+  {
+   "orderId": "20260906000000",
+   "createTime": "2026-09-06 08:29:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "麦香鱼早餐套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 22.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 22.5,
+   "pointEarned": 22
+  },
+  {
+   "orderId": "20260908000000",
+   "createTime": "2026-09-08 17:20:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店自取",
+   "items": [
+    {
+     "name": "可口可乐中杯",
+     "category": "饮品",
+     "qty": 1,
+     "price": 8.5
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 2,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 18.0,
+   "pointEarned": 18
+  },
+  {
+   "orderId": "20260913000000",
+   "createTime": "2026-09-13 12:39:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 2,
+     "price": 9.5
+    },
+    {
+     "name": "板烧鸡腿堡套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 28.5
+    },
+    {
+     "name": "吉士汉堡套餐",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 21.5
+    },
+    {
+     "name": "麦辣鸡翅（3只）",
+     "category": "小食",
+     "qty": 2,
+     "price": 25.0
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 84.5,
+   "pointEarned": 84
+  },
+  {
+   "orderId": "20260917000000",
+   "createTime": "2026-09-17 19:40:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "得来速",
+   "items": [
+    {
+     "name": "冰美式",
+     "category": "饮品",
+     "qty": 2,
+     "price": 16.5
+    },
+    {
+     "name": "麦旋风（奥利奥）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 18.0
+    }
+   ],
+   "couponName": "新品尝鲜 5 折券",
+   "discount": 10.5,
+   "paid": 24.0,
+   "pointEarned": 24
+  },
+  {
+   "orderId": "20260918000000",
+   "createTime": "2026-09-18 13:18:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "双层吉士堡",
+     "category": "汉堡",
+     "qty": 1,
+     "price": 15.5
+    },
+    {
+     "name": "巨无霸套餐",
+     "category": "汉堡",
+     "qty": 2,
+     "price": 29.0
+    },
+    {
+     "name": "可口可乐零度",
+     "category": "饮品",
+     "qty": 1,
+     "price": 9.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 54.0,
+   "pointEarned": 54
+  },
+  {
+   "orderId": "20260919000000",
+   "createTime": "2026-09-19 07:54:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "柠檬茶",
+     "category": "饮品",
+     "qty": 1,
+     "price": 12.0
+    },
+    {
+     "name": "猪柳蛋麦满分套餐",
+     "category": "早餐",
+     "qty": 1,
+     "price": 20.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 32.5,
+   "pointEarned": 32
+  },
+  {
+   "orderId": "20260921000000",
+   "createTime": "2026-09-21 14:58:00",
+   "storeCode": "4403003",
+   "storeName": "深圳罗湖莲塘村店",
+   "channel": "到店堂食",
+   "items": [
+    {
+     "name": "橙汁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 10.5
+    },
+    {
+     "name": "麦乐鸡（4块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 12.5
+    },
+    {
+     "name": "麦旋风（原味）",
+     "category": "甜品",
+     "qty": 1,
+     "price": 13.5
+    }
+   ],
+   "couponName": "",
+   "discount": 0.0,
+   "paid": 36.5,
+   "pointEarned": 36
+  },
+  {
+   "orderId": "20261011000000",
+   "createTime": "2026-10-11 15:15:00",
+   "storeCode": "4403001",
+   "storeName": "深圳罗湖东门店",
+   "channel": "麦乐送",
+   "items": [
+    {
+     "name": "薯饼（6块）",
+     "category": "小食",
+     "qty": 1,
+     "price": 8.5
+    },
+    {
+     "name": "燕麦拿铁",
+     "category": "饮品",
+     "qty": 1,
+     "price": 23.0
+    }
+   ],
+   "couponName": "满 30 减 8 元券",
+   "discount": 8.0,
+   "paid": 23.5,
+   "pointEarned": 23
+  }
+ ]
+}

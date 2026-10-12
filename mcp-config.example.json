@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mcd-mcp": {
+      "url": "https://api.mcd.cn/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer ${MCD_MCP_TOKEN}"
+      }
+    }
+  }
+}
