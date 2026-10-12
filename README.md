@@ -8,6 +8,8 @@
 
 **麦当劳程序员节创意开发大赛参赛作品** · 非麦当劳官方产品
 
+**🔴 在线体验：[wangnuo-log.github.io/mcd-wrapped/demo.html](https://wangnuo-log.github.io/mcd-wrapped/demo.html)**（脱敏示例数据渲染，即开即看）
+
 ---
 
 ## 🚫 先看一眼这个榜单的空白
